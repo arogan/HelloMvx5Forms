@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<core:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:core="clr-namespace:MvvmCross.Forms.Core;assembly=MvvmCross.Forms.Core"
+    x:Class="HelloMvx5Forms.Core.Views.MasterPage"
+    Title="Master Page">
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="HelloMvx5Forms"/>
+        <Label Text="Master Page"/>
+        <Button Text="Show Detail page" Command="{Binding ShowDetailCommand}" />
+    </StackLayout>
+</core:MvxContentPage>
