@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Threading.Tasks;
+using HelloMvx5Forms.Core.Models;
 using MvvmCross.Core.ViewModels;
 
 namespace HelloMvx5Forms.Core.ViewModels
 {
-    public class DetailViewModel :MvxViewModel
+    public class DetailViewModel :MvxViewModel<Models.NavModel>
     {
 		private static int instanceCount = 0;
 		public int InstanceCount
@@ -33,8 +35,13 @@ namespace HelloMvx5Forms.Core.ViewModels
         public DetailViewModel()
         {            
             InstanceCount++;
+            string guid = Guid.NewGuid().ToString();
         }
 
-
+        public override Task Initialize(NavModel parameter)
+        {
+            ParmValue = parameter.Message;
+            return Task.FromResult(true);
+        }
     }
 }

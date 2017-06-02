@@ -1,6 +1,7 @@
 ﻿using System;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
+using HelloMvx5Forms.Core.Models;
 
 namespace HelloMvx5Forms.Core.ViewModels
 {
@@ -25,7 +26,9 @@ namespace HelloMvx5Forms.Core.ViewModels
 		{
 			get
 			{
-				_navigateCommand = _navigateCommand ?? new MvxAsyncCommand(() => _navigationService.Navigate<DetailViewModel>());
+                NavModel navData = new NavModel();
+                navData.Message = $"[{System.DateTime.Now}] Message from master: {Guid.NewGuid()}";
+				_navigateCommand = _navigateCommand ?? new MvxAsyncCommand(() => _navigationService.Navigate<DetailViewModel, NavModel>(navData));
 				return _navigateCommand;
 			}
 		}
