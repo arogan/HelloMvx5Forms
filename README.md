@@ -1,5 +1,6 @@
 # HelloMvx5Forms
-test navigation in new mvvmcross 5 forms
+test navigation in new mvvmcross 5 forms.
+
 Built using latest Visual Studio for Mac.  Using latest MVVMCross 5.0.1 for all nuget libraries.
 
 issue:
